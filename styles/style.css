@@ -1,0 +1,18 @@
+:root {
+    --blueMain: #3B95D7;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    background-color: var(--blueMain);
+    color: #fff;
+    padding: 1rem;
+}
