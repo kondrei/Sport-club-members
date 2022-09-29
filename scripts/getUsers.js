@@ -1,6 +1,7 @@
 import editUser from "./editUser.js";
 
 export default function getUsers() {
+    document.querySelector('.loader').style.display = 'inline-block';
     fetch('http://localhost:3000/users')
         .then((response) => {
             if (!response.ok) {
@@ -9,11 +10,12 @@ export default function getUsers() {
             return response.json()
         })
         .then(data => data.forEach(element => {
-            document.querySelector('.loader').style.display = 'none'
+            document.querySelector('.loader').style.display = 'none';
             memberCard(element);
         }))
         .catch(error => {
-            throw new Error('Opps, unknown error')
+            document.querySelector('.loader').style.display = 'none';
+            throw new Error(`Opps, unknown error: ${error}`);
         })
 
 
@@ -63,7 +65,6 @@ function memberCard({ firstName, lastName, id, address }) {
     });
 
     editBtn.addEventListener('click', (e) => {
-        console.log(e.target);
         editUser(id);
     });
 

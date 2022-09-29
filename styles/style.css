@@ -18,6 +18,18 @@ body {
     min-height: 100vh;
 }
 
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /* background-color: rgba(59, 149, 2
+    o15, .5); */
+    background-color: var(--mainBlue);
+    opacity: 0.7;
+}
+
 .header {
     background-color: var(--mainBlue);
     color: #fff;
@@ -25,30 +37,15 @@ body {
     margin-bottom: var(--margin);
 }
 
+h1 {
+    display: inline-block;
+}
+
 .content {
     display: grid;
     grid-template-columns: 370px 1.8fr;
 }
 
-.loader {
-    width: 48px;
-    height: 48px;
-    border: 5px solid #FFF;
-    border-bottom-color: var(--mainBlue);
-    border-radius: 50%;
-    display: inline-block;
-    animation: rotation 1s linear infinite;
-}
-
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 .aside {
     /* height: calc(100vh - 117px); */
@@ -69,6 +66,30 @@ body {
     margin-bottom: var(--margin);
     padding: 1rem;
 }
+
+.spinner {
+    position: absolute;
+    top: calc(100vh /2);
+    right: calc(100vw /2);
+    width: 50px;
+    height: 50px;
+    border: 5px solid #FFF;
+    border-bottom-color: var(--mainBlue);
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+    padding: 0px;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 .footer {
     background-color: var(--mainBlue);
@@ -150,11 +171,12 @@ label {
 input[type=text] {
     height: 30px;
     border: none;
+    width: 100%;
 }
 
 select {
     height: 34px;
-
+    border: none;
 }
 
 .nameFields {
@@ -162,10 +184,14 @@ select {
     gap: 1rem;
 }
 
-.adressFields {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.adressFields,
+.infoFields,
+.sports {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-between;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 #address {
@@ -181,16 +207,9 @@ fieldset {
     display: flex;
 }
 
-.infoFields {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-
-}
-
 .sports {
-    display: flex;
-    padding: 1rem;
     align-items: flex-end;
+    margin-bottom: 0px;
 }
 
 .chackboxes {
@@ -217,7 +236,7 @@ fieldset {
 }
 
 .button {
-    margin: 1rem;
+    /* margin: 1rem; */
     background-color: var(--mainBlue);
     padding: 5px 3rem;
     border: 1px solid var(--darkGray);

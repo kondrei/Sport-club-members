@@ -14,14 +14,15 @@
 </head>
 
 <body>
+
     <div class="main">
+
 
         <div class="header">
             <h1>Sport club members</h1>
         </div>
         <div class="content">
             <div class="aside">
-                <span class="loader"></span>
             </div>
             <div class="forms">
                 <div class="newMember">
@@ -42,11 +43,11 @@
                         <div class="adressFields">
                             <div>
                                 <label for="adress">Adress:</label>
-                                <input type="text" name="adress" id="address">
+                                <input type="text" name="streetAndNumber" id="address">
                             </div>
                             <div>
                                 <label for="zip">Zip Code:</label>
-                                <input type="text" name="zip" id="zip">
+                                <input type="text" name="postalCode" id="zip">
                             </div>
                             <div>
                                 <label for="city">City:</label>
@@ -54,7 +55,7 @@
                             </div>
                             <div>
                                 <label for="Country">Country:</label>
-                                <input type="text" name="Country">
+                                <input type="text" name="country">
                             </div>
                         </div>
                         <div class="infoFields">
@@ -74,11 +75,10 @@
                             <fieldset>
                                 <legend>Activity class</legend>
                                 <div class="radios">
-
                                     <label for="professional">professional
                                         <input type="radio" id="professional" name="acitivity" value="professional">
                                     </label>
-                                    <label for="amateur">acitivity
+                                    <label for="amateur">amateur
                                         <input type="radio" id="amateur" name="acitivity" value="amateur">
                                     </label>
                                 </div>
@@ -115,7 +115,7 @@
                         <div class="nameFields">
                             <div>
                                 <label for="firstName">First name:</label>
-                                <input type="text" name="firstName">
+                                <input type="text" name="firstName" id="name">
 
                             </div>
                             <div>
@@ -126,11 +126,11 @@
                         <div class="adressFields">
                             <div>
                                 <label for="adress">Adress:</label>
-                                <input type="text" name="adress" id="address">
+                                <input type="text" name="streetAndNumber" id="address">
                             </div>
                             <div>
                                 <label for="zip">Zip Code:</label>
-                                <input type="text" name="zip" id="zip">
+                                <input type="text" name="postalCode" id="zip">
                             </div>
                             <div>
                                 <label for="city">City:</label>
@@ -138,7 +138,7 @@
                             </div>
                             <div>
                                 <label for="Country">Country:</label>
-                                <input type="text" name="Country">
+                                <input type="text" name="country">
                             </div>
                         </div>
                         <div class="infoFields">
@@ -162,7 +162,7 @@
                                     <label for="professional">professional
                                         <input type="radio" id="professional" name="acitivity" value="professional">
                                     </label>
-                                    <label for="amateur">acitivity
+                                    <label for="amateur">amateur
                                         <input type="radio" id="amateur" name="acitivity" value="amateur">
                                     </label>
                                 </div>
@@ -203,7 +203,9 @@
 
         </div>
     </div>
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
 </body>
-</div>
 
 </html>

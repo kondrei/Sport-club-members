@@ -21,7 +21,7 @@ const ITEMS = {
 				city: 'Berceni',
 				country: 'Romania'
 			},
-			sports: ['running'],
+			sports: ['running', 'cycling'],
 			gender: 'female',
 			age: 20,
 			activity_class: 'professional'
