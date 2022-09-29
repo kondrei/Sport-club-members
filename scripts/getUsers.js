@@ -1,3 +1,4 @@
+import editUser from "./editUser.js";
 
 export default function getUsers() {
     fetch('http://localhost:3000/users')
@@ -62,7 +63,8 @@ function memberCard({ firstName, lastName, id, address }) {
     });
 
     editBtn.addEventListener('click', (e) => {
-        console.log(e.target)
+        console.log(e.target);
+        editUser(id);
     });
 
     const delBtn = addElement(card, 'button', {

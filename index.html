@@ -24,9 +24,181 @@
                 <span class="loader"></span>
             </div>
             <div class="forms">
-                <div class="newMember">new</div>
-                <div class="editMember">add</div>
-                <div class="footer">footer</div>
+                <div class="newMember">
+                    <h1 class="formTitle">Add new member</h1>
+                    <hr>
+                    <form>
+                        <div class="nameFields">
+                            <div>
+                                <label for="firstName">First name:</label>
+                                <input type="text" name="firstName">
+
+                            </div>
+                            <div>
+                                <label for="lastName">Last name:</label>
+                                <input type="text" name="lastName">
+                            </div>
+                        </div>
+                        <div class="adressFields">
+                            <div>
+                                <label for="adress">Adress:</label>
+                                <input type="text" name="adress" id="address">
+                            </div>
+                            <div>
+                                <label for="zip">Zip Code:</label>
+                                <input type="text" name="zip" id="zip">
+                            </div>
+                            <div>
+                                <label for="city">City:</label>
+                                <input type="text" name="city">
+                            </div>
+                            <div>
+                                <label for="Country">Country:</label>
+                                <input type="text" name="Country">
+                            </div>
+                        </div>
+                        <div class="infoFields">
+                            <div>
+
+                                <label for="gender">Gender:</label>
+                                <select id="gender" name="gender">
+                                    <option value="">female/male/not specified</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="age">Age:</label>
+                                <input type="text" name="age">
+                            </div>
+                            <fieldset>
+                                <legend>Activity class</legend>
+                                <div class="radios">
+
+                                    <label for="professional">professional
+                                        <input type="radio" id="professional" name="acitivity" value="professional">
+                                    </label>
+                                    <label for="amateur">acitivity
+                                        <input type="radio" id="amateur" name="acitivity" value="amateur">
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                        <div class="sports">
+                            <div class="chackboxes">
+                                <label for="running" class="break">Practiced sports:</label>
+                                <label for="running">Running</label>
+                                <input type="checkbox" name="running" id="running">
+
+                                <label for="cycling">Cycling</label>
+                                <input type="checkbox" name="cycling" id="cycling">
+
+                                <label for="swimming">Swimming</label>
+                                <input type="checkbox" name="swimming" id="swimming" checked>
+
+                                <label for="walking">Walking</label>
+                                <input type="checkbox" name="walking" id="walking">
+
+                                <label for="skiing">Skiing</label>
+                                <input type="checkbox" name="skiing" id="skiing">
+                            </div>
+                            <button class="button">Save</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="editMember">
+                    <h1 class="formTitle">Edit member</h1>
+                    <hr>
+                    <form>
+                        <div class="nameFields">
+                            <div>
+                                <label for="firstName">First name:</label>
+                                <input type="text" name="firstName">
+
+                            </div>
+                            <div>
+                                <label for="lastName">Last name:</label>
+                                <input type="text" name="lastName">
+                            </div>
+                        </div>
+                        <div class="adressFields">
+                            <div>
+                                <label for="adress">Adress:</label>
+                                <input type="text" name="adress" id="address">
+                            </div>
+                            <div>
+                                <label for="zip">Zip Code:</label>
+                                <input type="text" name="zip" id="zip">
+                            </div>
+                            <div>
+                                <label for="city">City:</label>
+                                <input type="text" name="city">
+                            </div>
+                            <div>
+                                <label for="Country">Country:</label>
+                                <input type="text" name="Country">
+                            </div>
+                        </div>
+                        <div class="infoFields">
+                            <div>
+
+                                <label for="gender">Gender:</label>
+                                <select id="gender" name="gender">
+                                    <option value="">female/male/not specified</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="age">Age:</label>
+                                <input type="text" name="age">
+                            </div>
+                            <fieldset>
+                                <legend>Activity class</legend>
+                                <div class="radios">
+
+                                    <label for="professional">professional
+                                        <input type="radio" id="professional" name="acitivity" value="professional">
+                                    </label>
+                                    <label for="amateur">acitivity
+                                        <input type="radio" id="amateur" name="acitivity" value="amateur">
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                        <div class="sports">
+                            <div class="chackboxes">
+                                <label for="running" class="break">Practiced sports:</label>
+                                <label for="running">Running</label>
+                                <input type="checkbox" name="running" id="running">
+
+                                <label for="cycling">Cycling</label>
+                                <input type="checkbox" name="cycling" id="cycling">
+
+                                <label for="swimming">Swimming</label>
+                                <input type="checkbox" name="swimming" id="swimming" checked>
+
+                                <label for="walking">Walking</label>
+                                <input type="checkbox" name="walking" id="walking">
+
+                                <label for="skiing">Skiing</label>
+                                <input type="checkbox" name="skiing" id="skiing">
+                            </div>
+                            <button class="button">Uodate</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="footer">
+                    <ul>
+                        <li>&#8226; Recent news</li>
+                        <li>&#8226; About us</li>
+                        <li>&#8226; Services</li>
+                        <li>&#8226; Contact us</li>
+                    </ul>
+                </div>
             </div>
 
         </div>

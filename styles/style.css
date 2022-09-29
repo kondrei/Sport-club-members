@@ -11,9 +11,11 @@
     padding: 0px;
 }
 
+html,
 body {
     font-family: 'Poppins', sans-serif;
     box-sizing: content-box;
+    min-height: 100vh;
 }
 
 .header {
@@ -21,6 +23,11 @@ body {
     color: #fff;
     padding: 1rem;
     margin-bottom: var(--margin);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 370px 1.8fr;
 }
 
 .loader {
@@ -43,13 +50,8 @@ body {
     }
 }
 
-.content {
-    display: grid;
-    grid-template-columns: 0.9fr 1.8fr;
-}
-
 .aside {
-    height: calc(100vh - 117px);
+    /* height: calc(100vh - 117px); */
     overflow-y: auto;
     overflow-x: hidden;
     background-color: rgba(59, 149, 215, .25);
@@ -65,6 +67,7 @@ body {
 .editMember {
     background-color: var(--gray);
     margin-bottom: var(--margin);
+    padding: 1rem;
 }
 
 .footer {
@@ -111,7 +114,7 @@ body {
     color: #000;
 }
 
-button {
+.card button {
     border: 1px solid var(--darkGray);
     width: 80px;
     height: 23px;
@@ -123,10 +126,123 @@ button {
 }
 
 button:hover {
-    background-color: var(--mainBlue);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-.delete {
+.card .delete {
     background-color: var(--red);
     color: #FFF;
+}
+
+.formTitle {
+    color: var(--mainBlue);
+}
+
+hr {
+    border: 1px solid #000;
+}
+
+input,
+label {
+    display: block;
+}
+
+input[type=text] {
+    height: 30px;
+    border: none;
+}
+
+select {
+    height: 34px;
+
+}
+
+.nameFields {
+    display: flex;
+    gap: 1rem;
+}
+
+.adressFields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+#address {
+    width: 300px;
+}
+
+#zip {
+    width: 100px;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+}
+
+.infoFields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+.sports {
+    display: flex;
+    padding: 1rem;
+    align-items: flex-end;
+}
+
+.chackboxes {
+    border: 1px solid var(--mainBlue);
+    border-radius: 10px;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.break {
+    flex-basis: 100%;
+}
+
+.radios {
+    display: flex;
+    gap: 1rem;
+    background-color: #FFF;
+    flex-direction: row;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.button {
+    margin: 1rem;
+    background-color: var(--mainBlue);
+    padding: 5px 3rem;
+    border: 1px solid var(--darkGray);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all .5s ease;
+    margin-left: 1rem;
+    color: #fff;
+}
+
+.footer {
+    display: flex;
+
+}
+
+.footer ul {
+    color: #fff;
+    padding: 1rem;
+}
+
+ul li {
+    list-style-type: disc;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin-right: 2rem;
 }
