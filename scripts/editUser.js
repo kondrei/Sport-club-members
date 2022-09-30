@@ -1,4 +1,6 @@
 import validateData from "./validateData.js";
+import collectData from "./collectData.js";
+import getUsers from "./getUsers.js";
 
 export default function editUser(id) {
     document.querySelector('.loader').style.display = 'inline-block';
@@ -10,7 +12,7 @@ export default function editUser(id) {
             return response.json();
         })
         .then(data => {
-            fillInputs(data);
+            fillInputs(data, id);
             document.querySelector('.loader').style.display = 'none';
         }
         )
@@ -21,6 +23,7 @@ export default function editUser(id) {
 
 function fillInputs(data) {
     const inputs = document.querySelectorAll('.editMember input');
+    inputs.forEach(element => element.classList.remove('error'));
     const radios = document.querySelectorAll('.editMember input[type=checkbox]');
     for (let radio of radios) {
         radio.removeAttribute('checked');
@@ -52,28 +55,39 @@ function fillInputs(data) {
     gender.value = data.gender;
 }
 
-function collectData() {
-    const data = {};
-    const inputs = document.querySelectorAll('.editMember input');
-    for (let input of inputs) {
-        if (input.name = 'streetAndNumber') {
-            data.address[input.name] = input.value;
-            console.log(input.name);
-            // data.address = input.value;
-        } else {
-            data[input.name] = input.value;
-        }
-    };
-    console.log(data);
-};
+function saveUser(data) {
+    console.log('fetching', data.id);
+    const putMethod = {
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify(data)
+    }
 
+    fetch(`http://localhost:3000/users/${data.id}`, putMethod)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Fetch error - saving error')
+            }
+            return response.json()
+        })
+        .then(data => {
+            console.log('data was saved');
+            document.querySelector('.aside').innerHTML = '';
+            getUsers();
+        })
+        .catch(error => { throw new Error(`Opps, unknown error: ${error}`); })
+
+}
 
 const editBtn = document.querySelector('.editMember  button');
 editBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if (validateData()) {
-        collectData();
+        saveUser(collectData('.editMember'));
     } else {
         console.log('complete data');
     }
 })
+
