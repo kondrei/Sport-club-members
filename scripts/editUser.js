@@ -1,18 +1,22 @@
 import validateData from "./validateData.js";
 import collectData from "./collectData.js";
 import saveUser from "./saveUser.js";
+import addUser from "./addUser.js";
+import infoBox from "./infoBox.js";
 
 export default function editUser(id) {
     document.querySelector('.loader').style.display = 'inline-block';
     fetch(`http://localhost:3000/users/${id}`)
         .then((response) => {
             if (!response.ok) {
+                infoBox('Fetch error - request error', 'error');
                 throw new Error('Fetch error - request error');
             }
             return response.json();
         })
         .then(data => {
             fillInputs(data, id);
+
             document.querySelector('.loader').style.display = 'none';
         }
         )
@@ -56,13 +60,18 @@ function fillInputs(data) {
 }
 
 
-const editBtn = document.querySelector('.editMember  button');
+const editBtn = document.querySelector('.editMember button');
 editBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    if (validateData()) {
+    if (validateData('.editMember')) {
         saveUser(collectData('.editMember'));
-    } else {
-        console.log('complete data');
     }
 });
 
+const saveBtn = document.querySelector('.newMember button');
+saveBtn.addEventListener('click', e => {
+    e.preventDefault();
+    if (validateData('.newMember')) {
+        addUser();
+    }
+})

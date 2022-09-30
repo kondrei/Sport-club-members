@@ -309,12 +309,33 @@ ul li {
 .dialogContent {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    align-content: center;
     align-items: center;
     height: 100%;
     flex-wrap: wrap;
 }
 
+.message {
+    text-align: center;
+}
+
 .delete {
     background-color: var(--red);
+}
+
+.infoBox {
+    opacity: 0;
+    position: absolute;
+    min-width: 300px;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    transition: all 1s ease;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }

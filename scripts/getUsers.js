@@ -1,11 +1,13 @@
 import deleteUser from "./deleteUser.js";
 import editUser from "./editUser.js";
+import infoBox from "./infoBox.js";
 
 export default function getUsers() {
     document.querySelector('.loader').style.display = 'inline-block';
     fetch('http://localhost:3000/users')
         .then((response) => {
             if (!response.ok) {
+                infoBox('Fetch error - request error', 'error');
                 throw new Error('Fetch error - request error')
             }
             document.querySelector('.loader').style.display = 'none';
@@ -17,6 +19,7 @@ export default function getUsers() {
         }))
         .catch(error => {
             document.querySelector('.loader').style.display = 'none';
+            infoBox('Fetch error - request error', `Opps, unknown error: ${error}`);
             throw new Error(`Opps, unknown error: ${error}`);
         })
 

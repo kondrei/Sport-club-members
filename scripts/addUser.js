@@ -1,16 +1,20 @@
+import collectData from "./collectData.js";
 import getUsers from "./getUsers.js";
 import infoBox from "./infoBox.js";
 
-export default function saveUser(data) {
-    const putMethod = {
-        method: 'PUT',
+export default function addUser() {
+    console.log('adding user');
+    const data = collectData('.newMember');
+
+    const postMethod = {
+        method: 'POST',
         headers: {
             'Content-type': 'application/json; charset=UTF-8'
         },
         body: JSON.stringify(data)
     };
 
-    fetch(`http://localhost:3000/users/${data.id}`, putMethod)
+    fetch(`http://localhost:3000/users/`, postMethod)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Fetch error - saving error')
@@ -19,9 +23,8 @@ export default function saveUser(data) {
         })
         .then(data => {
             document.querySelector('.aside').innerHTML = '';
-            infoBox('User saved successfully', 'info');
             getUsers();
+            infoBox('user was addet', 'info')
         })
         .catch(error => { throw new Error(`Opps, unknown error: ${error}`); })
-
 }
