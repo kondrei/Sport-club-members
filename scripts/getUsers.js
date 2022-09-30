@@ -1,3 +1,4 @@
+import deleteUser from "./deleteUser.js";
 import editUser from "./editUser.js";
 
 export default function getUsers() {
@@ -7,7 +8,8 @@ export default function getUsers() {
             if (!response.ok) {
                 throw new Error('Fetch error - request error')
             }
-            return response.json()
+            document.querySelector('.loader').style.display = 'none';
+            return response.json();
         })
         .then(data => data.forEach(element => {
             document.querySelector('.loader').style.display = 'none';
@@ -76,6 +78,6 @@ function memberCard({ firstName, lastName, id, address }) {
 
 
     delBtn.addEventListener('click', (e) => {
-        console.log(e.target)
+        deleteUser(id);
     });
 }

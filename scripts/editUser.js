@@ -1,6 +1,6 @@
 import validateData from "./validateData.js";
 import collectData from "./collectData.js";
-import getUsers from "./getUsers.js";
+import saveUser from "./saveUser.js";
 
 export default function editUser(id) {
     document.querySelector('.loader').style.display = 'inline-block';
@@ -55,31 +55,6 @@ function fillInputs(data) {
     gender.value = data.gender;
 }
 
-function saveUser(data) {
-    console.log('fetching', data.id);
-    const putMethod = {
-        method: 'PUT',
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8'
-        },
-        body: JSON.stringify(data)
-    }
-
-    fetch(`http://localhost:3000/users/${data.id}`, putMethod)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Fetch error - saving error')
-            }
-            return response.json()
-        })
-        .then(data => {
-            console.log('data was saved');
-            document.querySelector('.aside').innerHTML = '';
-            getUsers();
-        })
-        .catch(error => { throw new Error(`Opps, unknown error: ${error}`); })
-
-}
 
 const editBtn = document.querySelector('.editMember  button');
 editBtn.addEventListener('click', (e) => {
@@ -89,5 +64,5 @@ editBtn.addEventListener('click', (e) => {
     } else {
         console.log('complete data');
     }
-})
+});
 
