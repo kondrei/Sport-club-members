@@ -166,6 +166,9 @@ hr {
 input,
 label {
     display: block;
+    outline: none;
+    caret-color: var(--mainBlue);
+    padding: 0 5px;
 }
 
 input[type=text] {
@@ -264,4 +267,9 @@ ul li {
 .footer ul li {
     display: inline-block;
     margin-right: 2rem;
+}
+
+.error {
+    outline: auto;
+    outline-color: var(--red);
 }
