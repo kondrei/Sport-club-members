@@ -10,7 +10,10 @@ export default function validateData(place) {
             allCompleted = false;
         };
     }
-
+    const selectBox = document.querySelector(`${place} select`);
+    if (!selectBox.value) {
+        selectBox.classList.add('error');
+    }
     (!allCompleted) ? infoBox('Please input required fields!', 'error') : '';
     return allCompleted;
 }

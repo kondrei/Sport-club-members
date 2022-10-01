@@ -72,6 +72,6 @@ const saveBtn = document.querySelector('.newMember button');
 saveBtn.addEventListener('click', e => {
     e.preventDefault();
     if (validateData('.newMember')) {
-        addUser();
+        addUser(collectData('.newMember'));
     }
 })

@@ -15,7 +15,7 @@ export default function getUsers() {
         })
         .then(data => data.forEach(element => {
             document.querySelector('.loader').style.display = 'none';
-            memberCard(element);
+            return memberCard(element);
         }))
         .catch(error => {
             document.querySelector('.loader').style.display = 'none';

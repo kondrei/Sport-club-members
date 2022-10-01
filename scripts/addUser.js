@@ -2,9 +2,9 @@ import collectData from "./collectData.js";
 import getUsers from "./getUsers.js";
 import infoBox from "./infoBox.js";
 
-export default function addUser() {
+export default function addUser(data) {
     console.log('adding user');
-    const data = collectData('.newMember');
+    // const data = collectData('.newMember');
 
     const postMethod = {
         method: 'POST',
@@ -24,7 +24,7 @@ export default function addUser() {
         .then(data => {
             document.querySelector('.aside').innerHTML = '';
             getUsers();
-            infoBox('user was addet', 'info')
+            infoBox('User was added', 'info')
         })
         .catch(error => { throw new Error(`Opps, unknown error: ${error}`); })
 }

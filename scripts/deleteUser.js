@@ -9,7 +9,6 @@ export default function deleteUser(id) {
 
     document.querySelector('.buttons .yes').addEventListener('click', (event) => {
         event.preventDefault();
-        document.querySelector('.aside').innerHTML = '';
         fetchDelete(id);
     });
 
@@ -29,8 +28,9 @@ function fetchDelete(id) {
             return response;
         })
         .then((data) => {
-            infoBox('User deteled!', 'info');
-            return getUsers();
+            infoBox('User deleted!', 'info');
+            document.querySelector('.aside').innerHTML = '';
+            getUsers();
         })
         .catch(error => {
             infoBox(`Opps, unknown error: ${error}`);

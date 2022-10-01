@@ -8,7 +8,8 @@ export default function collectData(location) {
         if (input.name === 'postalCode' || input.name == 'streetAndNumber' || input.name == 'city' || input.name == 'country') {
             data.address[input.name] = input.value;
         } else if (input.type == 'checkbox') {
-            input.hasAttribute('checked') ? sports.push(input.name) : '';
+            console.log(input.name);
+            input.checked ? sports.push(input.name) : '';
         } else if (input.type == 'radio') {
             (input.checked) ? data.activity_class = input.value : '';
         }
