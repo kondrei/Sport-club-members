@@ -3,9 +3,6 @@ import getUsers from "./getUsers.js";
 import infoBox from "./infoBox.js";
 
 export default function addUser(data) {
-    console.log('adding user');
-    // const data = collectData('.newMember');
-
     const postMethod = {
         method: 'POST',
         headers: {

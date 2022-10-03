@@ -341,7 +341,7 @@ ul li {
     top: 0;
     color: #fff;
     height: 2rem;
-    padding: 0 1rem;
+    padding: 0.5rem 2rem;
     font-size: 1.5rem;
     transition: all 1s ease;
     border-top-left-radius: 10px;
