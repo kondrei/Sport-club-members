@@ -26,6 +26,7 @@ export default function editUser(id) {
 
 function fillInputs(data) {
     const inputs = document.querySelectorAll('.editMember input');
+    inputs[1].scrollIntoView();
     inputs[1].focus();
     inputs.forEach(element => element.classList.remove('error'));
     const radios = document.querySelectorAll('.editMember input[type=checkbox]');
