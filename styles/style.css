@@ -16,6 +16,7 @@ body {
     font-family: 'Poppins', sans-serif;
     box-sizing: content-box;
     min-height: 100vh;
+    accent-color: var(--mainBlue);
 }
 
 .loader {
@@ -91,9 +92,7 @@ h1 {
 }
 
 
-.footer {
-    background-color: var(--mainBlue);
-}
+
 
 .forms {
     display: grid;
@@ -187,6 +186,10 @@ select {
     gap: 1rem;
 }
 
+.nameFields>div {
+    flex: 1;
+}
+
 .adressFields,
 .infoFields,
 .sports {
@@ -196,6 +199,8 @@ select {
     gap: 1rem;
     margin-bottom: 1rem;
 }
+
+
 
 #address {
     width: 300px;
@@ -250,8 +255,9 @@ fieldset {
 }
 
 .footer {
+    background-color: var(--mainBlue);
     display: flex;
-
+    justify-content: center;
 }
 
 .footer ul {
@@ -266,6 +272,7 @@ ul li {
 .footer ul li {
     display: inline-block;
     margin-right: 2rem;
+    cursor: pointer;
 }
 
 .error {
@@ -333,10 +340,43 @@ ul li {
     right: 0;
     top: 0;
     color: #fff;
+    height: 2rem;
     padding: 0 1rem;
     font-size: 1.5rem;
     transition: all 1s ease;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 1024px) {
+    .header {
+        padding: 0 1rem;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 370px 1.8fr;
+    }
+
+    .aside {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nameFields {
+        flex-direction: column;
+    }
+
+    .adressFields,
+    .infoFields,
+    .sports {
+        flex-wrap: wrap;
+    }
+
+    input[type=text] {
+        width: 100%;
+    }
+
 }

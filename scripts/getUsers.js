@@ -19,8 +19,8 @@ export default function getUsers() {
         }))
         .catch(error => {
             document.querySelector('.loader').style.display = 'none';
-            infoBox('Fetch error - request error', `Opps, unknown error: ${error}`);
-            throw new Error(`Opps, unknown error: ${error}`);
+            infoBox(`Opps, unknown error: ${error}`, `Opps, unknown error: ${error}`);
+            throw new Error(`Error: ${error}`);
         })
 
 
@@ -36,9 +36,9 @@ function addElement(parent, type, attributes) {
     return element;
 }
 
-const aside = document.querySelector('.aside');
 
 function memberCard({ firstName, lastName, id, address }) {
+    const aside = document.querySelector('.aside');
     const memberCard = addElement(aside, 'div', { 'className': 'memberCard' });
 
     addElement(memberCard, 'div', {

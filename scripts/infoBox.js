@@ -7,5 +7,5 @@ export default function infoBox(message, type) {
 
     setTimeout(() => {
         box.style.opacity = '0';
-    }, 3000);
+    }, 5000);
 }

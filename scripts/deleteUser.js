@@ -3,6 +3,11 @@ import infoBox from "./infoBox.js";
 
 export default function deleteUser(id) {
     document.querySelector('.dialogBox').style.display = 'inline';
+
+    document.querySelector('.dialogBox').addEventListener('click', event => {
+        event.target.stopPropagation();
+        event.target.style.display = 'none';
+    })
     document.querySelector('.buttons .delete').addEventListener('click', event => {
         document.querySelector('.dialogBox').style.display = 'none';
     });

@@ -30,7 +30,7 @@ function fillInputs(data) {
     inputs.forEach(element => element.classList.remove('error'));
     const radios = document.querySelectorAll('.editMember input[type=checkbox]');
     for (let radio of radios) {
-        radio.removeAttribute('checked');
+        radio.checked = false;
     }
     for (let element in data) {
         for (let input of inputs) {
@@ -49,7 +49,7 @@ function fillInputs(data) {
             if (element == 'sports' && input.type == 'checkbox') {
                 for (let sport in data[element]) {
                     if (data[element][sport] === input.name) {
-                        input.setAttribute('checked', '');
+                        input.checked = true;
                     }
                 }
             }
