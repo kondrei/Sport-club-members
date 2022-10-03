@@ -18,7 +18,6 @@ export default function saveUser(data) {
             return response.json()
         })
         .then(data => {
-            document.querySelector('.aside').innerHTML = '';
             infoBox('User saved successfully', 'info');
             getUsers();
         })

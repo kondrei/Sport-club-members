@@ -20,6 +20,9 @@ function fetchDelete(id) {
     document.querySelector('.dialogBox').style.display = 'none';
     fetch(`http://localhost:3000/users/${id}`, {
         method: 'DELETE',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
     })
         .then(response => {
             if (!response.ok) {
@@ -30,7 +33,6 @@ function fetchDelete(id) {
         })
         .then((data) => {
             infoBox('User deleted!', 'info');
-            document.querySelector('.aside').innerHTML = '';
             getUsers();
         })
         .catch(error => {

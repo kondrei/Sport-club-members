@@ -19,7 +19,6 @@ export default function addUser(data) {
             return response.json()
         })
         .then(data => {
-            document.querySelector('.aside').innerHTML = '';
             getUsers();
             infoBox('User was added', 'info')
         })

@@ -16,7 +16,6 @@ export default function editUser(id) {
         })
         .then(data => {
             fillInputs(data, id);
-
             document.querySelector('.loader').style.display = 'none';
         }
         )
@@ -27,6 +26,7 @@ export default function editUser(id) {
 
 function fillInputs(data) {
     const inputs = document.querySelectorAll('.editMember input');
+    inputs[1].focus();
     inputs.forEach(element => element.classList.remove('error'));
     const radios = document.querySelectorAll('.editMember input[type=checkbox]');
     for (let radio of radios) {

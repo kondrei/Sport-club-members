@@ -10,13 +10,18 @@ export default function getUsers() {
                 infoBox('Fetch error - request error', 'error');
                 throw new Error('Fetch error - request error')
             }
+            document.querySelector('.aside').innerHTML = '';
             document.querySelector('.loader').style.display = 'none';
             return response.json();
         })
-        .then(data => data.forEach(element => {
-            document.querySelector('.loader').style.display = 'none';
-            return memberCard(element);
-        }))
+        .then(data => {
+            if (data.length == 0) {
+                document.querySelector('.aside').innerHTML = '<div class="name">No members to show! Please add some data</div>';
+            }
+            data.forEach(element => {
+                memberCard(element);
+            })
+        })
         .catch(error => {
             document.querySelector('.loader').style.display = 'none';
             infoBox(`Opps, unknown error: ${error}`, `Opps, unknown error: ${error}`);

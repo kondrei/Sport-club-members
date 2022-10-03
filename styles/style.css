@@ -17,6 +17,7 @@ body {
     box-sizing: content-box;
     min-height: 100vh;
     accent-color: var(--mainBlue);
+    scroll-behavior: smooth;
 }
 
 .loader {
@@ -25,8 +26,6 @@ body {
     height: 100%;
     left: 0;
     top: 0;
-    /* background-color: rgba(59, 149, 2
-    o15, .5); */
     background-color: var(--mainBlue);
     opacity: 0.7;
 }
@@ -49,7 +48,6 @@ h1 {
 
 
 .aside {
-    /* height: calc(100vh - 117px); */
     overflow-y: auto;
     overflow-x: hidden;
     background-color: rgba(59, 149, 215, .25);
@@ -59,6 +57,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    padding-bottom: 1rem;
 }
 
 .newMember,
@@ -101,7 +100,7 @@ h1 {
 
 .memberCard {
     min-width: 300px;
-    height: 128px;
+    min-height: 128px;
     border: 1px solid var(--darkGray);
     border-radius: 10px;
     background-color: rgba(86, 92, 78, .1);
@@ -118,12 +117,11 @@ h1 {
 }
 
 .avatar {
-    width: 50px;
+    min-width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: var(--gray);
     text-align: center;
-    font-size: larger;
     font-size: 1.5rem;
     padding: 10px;
     font-weight: bolder;
@@ -143,6 +141,7 @@ h1 {
     cursor: pointer;
     transition: all .5s ease;
     margin-left: 1rem;
+    border-radius: 5px;
 }
 
 button:hover {
@@ -171,9 +170,10 @@ label {
 }
 
 input[type=text] {
-    height: 30px;
+    height: 35px;
     border: none;
     width: 100%;
+    font-size: 1rem;
 }
 
 select {
@@ -183,31 +183,28 @@ select {
 
 .nameFields {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
-.nameFields>div {
-    flex: 1;
-}
+
 
 .adressFields,
 .infoFields,
 .sports {
     display: flex;
     flex-basis: 100%;
-    justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
     margin-bottom: 1rem;
 }
 
 
-
-#address {
-    width: 300px;
+.adressFields>div {
+    flex: 1;
 }
 
-#zip {
-    width: 100px;
+.zip,
+.age {
+    max-width: 100px;
 }
 
 fieldset {
@@ -252,6 +249,7 @@ fieldset {
     transition: all .5s ease;
     margin-left: 1rem;
     color: #fff;
+    border-radius: 5px;
 }
 
 .footer {
@@ -288,6 +286,8 @@ ul li {
     height: 100%;
     left: 0;
     top: 0;
+    background-color: rgba(217, 217, 217, 0.5);
+
 }
 
 .window {
@@ -363,10 +363,15 @@ ul li {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        margin-bottom: var(--margin);
     }
 
     .nameFields {
         flex-direction: column;
+    }
+
+    .nameFields>div {
+        flex: 1;
     }
 
     .adressFields,
