@@ -92,6 +92,20 @@ h1 {
 }
 
 
+.animate {
+    animation: animate 0.3s ease-in;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 
 
 .forms {
@@ -176,6 +190,7 @@ input[type=text] {
     border: none;
     width: 100%;
     font-size: 1rem;
+    border-radius: 5px;
 }
 
 select {
@@ -290,7 +305,7 @@ ul li {
     left: 0;
     top: 0;
     background-color: rgba(217, 217, 217, 0.5);
-
+    user-select: none;
 }
 
 .window {

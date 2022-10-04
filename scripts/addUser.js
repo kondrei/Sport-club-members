@@ -1,4 +1,3 @@
-import collectData from "./collectData.js";
 import getUsers from "./getUsers.js";
 import infoBox from "./infoBox.js";
 
