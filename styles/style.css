@@ -278,6 +278,7 @@ ul li {
 .error {
     outline: auto;
     outline-color: var(--red);
+    outline-style: solid;
 }
 
 

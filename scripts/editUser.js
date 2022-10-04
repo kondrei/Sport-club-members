@@ -29,6 +29,7 @@ function fillInputs(data) {
     inputs[1].scrollIntoView();
     inputs[1].focus();
     inputs.forEach(element => element.classList.remove('error'));
+    inputs.forEach(input => input.value = '');
     const radios = document.querySelectorAll('.editMember input[type=checkbox]');
     for (let radio of radios) {
         radio.checked = false;
